@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Weather App</title>
+  <meta name="generator" content="Bootply" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+  <link href="css/styles.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
+    </head>
+    <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Weather App</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <div class="row row-offcanvas row-offcanvas-left">
+         <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
+          <ul class="nav nav-sidebar nav-tabs">
+            <li class="active"><a class="current" data-toggle="tab" href="#current">Current weather</a></li>
+            <li><a data-toggle="tab" href="#5day-weather">5 day weather</a></li>
+            <li><a data-toggle="tab" href="#16day-weather">16 day weather</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-md-10 main">
+          <div class="page-wrap">
+            <div class="tab-content">
+              <div id="current" class="tab-pane fade in active">
+                <h1 class="page-header">Current weather</h1>
+
+                <div class="row placeholders">
+                  <!-- <div class="col-xs-12">
+                    <h4>Warszawa</h4>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Temperature</h4>
+                    <span class="text-muted temp"></span>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Clouds</h4>
+                    <span class="text-muted clouds"></span>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Wind</h4>
+                    <span class="text-muted wind"></span>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Rain</h4>
+                    <span class="text-muted rain"></span>
+                  </div> -->
+
+
+
+
+                  <div class="col-xs-12">
+                    <div class="content-container">
+                      <div id="internal-container">
+                        <h1 id="city"></h1>
+
+                        <div class="button-container">
+                          <button class="temp-toggle-button active" id="celsius">Celsius</button>
+                          <button class="temp-toggle-button" id="farenheit">Farenheit</button>
+                        </div>
+
+                        <div class="row text-center">
+
+                          <div class="col-xs-4">
+                            <img class="information-icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/77870-200.png">
+                            <p id="temperature"></p>
+                          </div>
+
+                          <div class="col-xs-4">
+                            <img id="weather-icon" >
+                            <h2 id="weather-description"></h2>
+                          </div>
+
+                          <div class="col-xs-4">
+                            <img class="information-icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/77881-200.png">
+                            <p id="wind-speed"></p>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+
+                  <div class="col-xs-12">
+                    <div id="map"></div>
+                  </div>
+                </div>
+
+                <div class="weather">
+
+                </div>
+
+              </div>
+
+              <div id="5day-weather" class="tab-pane fade">
+                <h1 class="page-header">5 day weather</h1>
+
+                <div class="row placeholders">
+                  <div class="col-xs-12">
+                    <h4>Warszawa</h4>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Temperature</h4>
+                    <span class="text-muted">Something else</span>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Clouds</h4>
+                    <span class="text-muted">Something else</span>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Wind</h4>
+                    <span class="text-muted">Something else</span>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Rain</h4>
+                    <span class="text-muted">Something else</span>
+                  </div>
+                </div>
+              </div>
+
+              <div id="16day-weather" class="tab-pane fade">
+                <h1 class="page-header">16 day weather</h1>
+
+                <div class="row placeholders">
+                  <div class="col-xs-12">
+                    <h4>Warszawa</h4>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Temperature</h4>
+                    <span class="text-muted">Something else</span>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Clouds</h4>
+                    <span class="text-muted">Something else</span>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Wind</h4>
+                    <span class="text-muted">Something else</span>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <h4>Rain</h4>
+                    <span class="text-muted">Something else</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <hr>
+          </div>
+
+        </div><!--/row-->
+      </div>
+    </div><!--/.container-->
+
+    <footer>
+
+    </footer>
+
+    <!-- script references -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!-- <script src="http://maps.googleapis.com/maps/api/js"></script> -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key= AIzaSyBc3h3MQi57TGbbVN-NMaDQKyos2VhLOjU&callback=initMap"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+  </html>
